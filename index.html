@@ -10,6 +10,8 @@
     <div v-show="welcome" v-bind:title="title">
       {{ message }}
     </div>
+    <button v-on:click="logMessage">按钮</button>
+    <input v-model="message">
   </div>
   <script src="./index.js" charset="utf-8"></script>
 </body>
