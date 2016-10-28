@@ -1,6 +1,7 @@
 var dataSource = {
-  imageSrc: 'http://assets.ninghao.net/demo_2.jpg',
-  imageWidth: '100%'
+  buttonClass: 'ui button',
+  colorClass: 'violet',
+  isLoading: false
 }
 
 var vm = new Vue({
