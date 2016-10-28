@@ -1,6 +1,6 @@
 var dataSource = {
-  message: 'hello',
-  loggedIn: false
+  imageSrc: 'http://assets.ninghao.net/demo_2.jpg',
+  imageWidth: '100%'
 }
 
 var vm = new Vue({

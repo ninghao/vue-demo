@@ -7,7 +7,9 @@
 </head>
 <body>
   <div id="app">
-    {{ loggedIn? message : '请先登录 : )' }}
+    <img
+      v-bind:src="imageSrc"
+      v-bind:style="{width: imageWidth}">
   </div>
   <script src="./index.js"></script>
 </body>
