@@ -11,12 +11,12 @@
     <div class="ui container">
       <div class="ui hidden divider"></div>
 
-      <template v-for="(item, index) in items">
-        <div>
-          {{ index }}. {{ item.text }}
-        </div>
-        <div class="ui divider"></div>
-      </template>
+      <button class="ui button" @click="like">
+        喜欢
+      </button>
+      <div class="ui red circular label">
+        {{ counter }}
+      </div>
 
     </div>
   </div>
