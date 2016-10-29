@@ -1,5 +1,6 @@
 var dataSource = {
-  message: '<h3>hello</h3>'
+  message: 'hello',
+  loggedIn: true
 }
 
 var vm = new Vue({
