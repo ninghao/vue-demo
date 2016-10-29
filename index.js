@@ -1,5 +1,5 @@
 var dataSource = {
-  message: 'hello'
+  message: false
 }
 
 var vm = new Vue({

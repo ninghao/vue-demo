@@ -15,8 +15,9 @@
         {{ message }}
       </div>
 
-      <div class="ui input">
-        <input v-model="message">
+      <div class="ui checkbox">
+        <input type="checkbox" v-model="message">
+        <label>{{ message }}</label>
       </div>
 
     </div>
