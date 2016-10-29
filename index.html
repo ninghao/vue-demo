@@ -11,8 +11,12 @@
     <div class="ui container">
       <div class="ui hidden divider"></div>
 
+      <div class="ui green inverted segment">
+        {{ message }}
+      </div>
+
       <div class="ui input">
-        <input v-on:keyup.enter="process">
+        <input v-model="message">
       </div>
 
     </div>
