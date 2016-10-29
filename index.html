@@ -11,13 +11,12 @@
     <div class="ui container">
       <div class="ui hidden divider"></div>
 
-      <div class="ui segment" v-if="loggedIn">
-        <p>{{ message }}</p>
-      </div>
-
-      <div class="ui yellow segment" v-else>
-        <p>login please : )</p>
-      </div>
+      <template v-for="(item, index) in items">
+        <div>
+          {{ index + 1 }}. {{ item.text }}
+        </div>
+        <div class="ui divider"></div>
+      </template>
 
     </div>
   </div>

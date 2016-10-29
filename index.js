@@ -1,6 +1,9 @@
 var dataSource = {
-  message: 'hello',
-  loggedIn: true
+  items: [
+    { text: 'nice' },
+    { text: 'great' },
+    { text: 'awesome' }
+  ]
 }
 
 var vm = new Vue({
