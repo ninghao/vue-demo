@@ -1,7 +1,17 @@
-Vue.component('segment', {
+Vue.component('card', {
   template: '\
-    <div class="ui stacked segment">\
-      <slot>:)</slot>\
+    <div class="ui card">\
+      <div class="image">\
+        <slot name="image">image</slot>\
+      </div>\
+      <div class="content">\
+        <div class="header">\
+          <slot name="header">header</slot>\
+        </div>\
+        <div class="meta">\
+          <slot name="meta">meta</slot>\
+        </div>\
+      </div>\
     </div>\
   '
 })
