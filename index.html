@@ -11,9 +11,11 @@
     <div class="ui container">
       <div class="ui hidden divider"></div>
 
-      <ui-button :text="published ? 'unpublish' : 'publish'"></ui-button>
-      <ui-button text="edit"></ui-button>
-      <ui-button text="delete"></ui-button>
+      <ui-button @increment="incrementTotal"></ui-button>
+      <ui-button @increment="incrementTotal"></ui-button>
+      <div class="ui red circular label">
+        {{ total }}
+      </div>
 
     </div>
   </div>

@@ -1,22 +1,28 @@
 Vue.component('ui-button', {
-  template: '<button class="ui button">{{ text }}</button>',
-  props: {
-    text: {
-      type: String,
-      default: 'button',
-      required: true,
-      validator (value) {
-        return value.length > 3
-      }
+  template: '<button @click="increment" class="ui button">{{ counter }}</button>',
+  data () {
+    return {
+      counter: 0
+    }
+  },
+  methods: {
+    increment () {
+      this.counter += 1,
+      this.$emit('increment')
     }
   }
 })
 
 var dataSource = {
-  published: false
+  total: 0
 }
 
 var vm = new Vue({
   el: '#app',
-  data: dataSource
+  data: dataSource,
+  methods: {
+    incrementTotal () {
+      this.total += 1
+    }
+  }
 })
