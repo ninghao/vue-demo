@@ -3,16 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Vue</title>
-  <script src="./vue.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://unpkg.com/semantic-ui/dist/semantic.css">
+  <script src="https://unpkg.com/vue/dist/vue.js" charset="utf-8"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js" charset="utf-8"></script>
 </head>
 <body>
-  <div id="app">
-    <ol>
-      <comment
-        v-for="comment in comments"
-        v-bind:comment="comment"></comment>
-    </ol>
-  </div>
+  <div id="app"></div>
   <script src="./index.js" charset="utf-8"></script>
 </body>
 </html>
