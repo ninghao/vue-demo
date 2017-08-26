@@ -5,6 +5,9 @@ const store = new Vuex.Store({
   mutations: {
     add(state, payload) {
       state.count.push(payload)
+    },
+    remove(state) {
+      state.count.pop()
     }
   },
   getters: {
@@ -20,12 +23,39 @@ const store = new Vuex.Store({
   }
 })
 
+const AddButton = {
+  template: `
+    <button class="ui button" @click="add">Add</button>
+  `,
+  methods: {
+    add() {
+      this.$store.commit('add', Math.floor(Math.random() * (10 - 1) + 1))
+    }
+  }
+}
+
+const RemoveButton = {
+  template: `
+    <button class="ui button" @click="remove">Remove</button>
+  `,
+  methods: {
+    remove() {
+      this.$store.commit('remove')
+    }
+  }
+}
+
 const Counter = {
   template: `
-    <div class="ui red circular label">
-      {{ count }}
+    <div>
+      <add-button></add-button>
+      <remove-button></remove-button>
+      <div class="ui red circular label">
+        {{ count }}
+      </div>
     </div>
   `,
+  components: { AddButton, RemoveButton },
   computed: {
     count() {
       return this.$store.getters.average
