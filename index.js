@@ -1,4 +1,5 @@
 const mapGetters = Vuex.mapGetters
+const mapActions = Vuex.mapActions
 
 const store = new Vuex.Store({
   state: {
@@ -10,6 +11,9 @@ const store = new Vuex.Store({
     },
     remove(state) {
       state.count.pop()
+    },
+    setCount(state, payload) {
+      state.count = payload
     }
   },
   getters: {
@@ -21,6 +25,14 @@ const store = new Vuex.Store({
     },
     average(state, getters) {
       return +(getters.sum / getters.total * 100 / 100).toFixed(1)
+    }
+  },
+  actions: {
+    getCount(context) {
+      return axios.get('http://localhost:8080/api/count')
+        .then((response) => {
+          context.commit('setCount', response.data.count)
+        })
     }
   }
 })
@@ -66,6 +78,14 @@ const Counter = {
       'total',
       'average'
     ])
+  },
+  methods: {
+    ...mapActions([
+      'getCount'
+    ])
+  },
+  mounted() {
+    this.getCount()
   }
 }
 
